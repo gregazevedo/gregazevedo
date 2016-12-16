@@ -1,0 +1,34 @@
+machine:
+  python:
+    version: 3.5.1
+  node:
+    version: 6.1.0
+  services:
+    - postgresql
+    - redis
+  environment:
+    DJANGO_SETTINGS_MODULE: gregazevedo.gregazevedo.settings.circleci
+dependencies:
+  override:
+    - pip install -r requirements-dev.txt
+    - npm install
+    - npm install -g webpack
+    - webpack
+test:
+  override:
+    - coverage run --source='.' manage.py test
+  post:
+    - codecov
+deployment:
+  prod:
+    branch: master
+    heroku:
+      appname: gregazevedo-prod
+  staging:
+    branch: master
+    heroku:
+      appname: gregazevedo-staging
+  dev:
+    branch: develop
+    heroku:
+      appname: gregazevedo-dev
