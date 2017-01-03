@@ -5,12 +5,21 @@ from django.contrib import admin
 from django.views.generic.base import RedirectView as rv
 from django.views.static import serve as static_serve
 
+from wagtail.wagtailadmin import urls as wagtailadmin_urls
+from wagtail.wagtaildocs import urls as wagtaildocs_urls
+from wagtail.wagtailcore import urls as wagtail_urls
+
+
 urlpatterns = [
     url(r'^favicon\.ico$', rv.as_view(url='/static/img/favicon.ico', permanent=True)),
     url(r'account/', include('gregazevedo.account.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'blog/', include('gregazevedo.blog.urls')),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'', include('gregazevedo.home.urls')),
+    url(r'^cms/', include(wagtailadmin_urls)),
+    url(r'^documents/', include(wagtaildocs_urls)),
+    url(r'^pages/', include(wagtail_urls)),
 ]
 
 

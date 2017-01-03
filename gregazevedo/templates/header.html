@@ -1,7 +1,10 @@
+{% load static %}
+
 <header>
-  <nav>
-    <a href=""></a>
-  </nav>
-  <p>Insert header content here</p>
+	<a href="/"><img src="{% static 'img/propic.png' %}"></a>
+	<nav>
+		<a href="{% url 'blog' %}">BLOG</a>
+		<a href="">ABOUT</a>
+	</nav>
 </header>
 

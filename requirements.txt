@@ -45,12 +45,11 @@ gunicorn==19.4.5
 #whoosh
 #django-haystack
 
-#Money
-
-
-
 #standard utilities
 raven==5.13.0
 #celery==3.1.18
 sendgrid-django==2.0.0
 django-webpack-loader==0.3.0
+
+#blog
+wagtail==1.8

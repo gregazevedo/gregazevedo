@@ -1,4 +1,5 @@
 # Django settings for project project.
+import os
 from environ import Env, Path
 import pathlib
 from django.core.exceptions import ImproperlyConfigured
@@ -7,15 +8,16 @@ DEBUG = False
 
 
 PROJECT_ROOT = pathlib.Path(__file__).parent.parent.parent
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(PROJECT_DIR)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 env = Env(DEBUG=(bool, False),)
 Env.read_env('.env')
 DEBUG = env('DEBUG')
 
 ADMINS = (
-    ('Ben Beecher', 'Ben@Lightmatter.com'),
-    ('Greg Hausheer', 'Greg@Lightmatter.com'),
-    ('Ryan Hinchey', 'Ryan@Lightmatter.com'),
-    ('Josh Schneier', 'Josh@Lightmatter.com'),
+    ('Greg Azevedo', 'G@Lightmatter.com'),
 )
 
 MANAGERS = ADMINS
@@ -70,6 +72,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
+    'wagtail.wagtailcore.middleware.SiteMiddleware',
+    'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 )
 
 ROOT_URLCONF = 'gregazevedo.gregazevedo.urls'
@@ -99,6 +103,21 @@ INSTALLED_APPS = (
     'gregazevedo.home',
     'gregazevedo.account',
     'gregazevedo.util',
+
+    'wagtail.wagtailforms',
+    'wagtail.wagtailredirects',
+    'wagtail.wagtailembeds',
+    'wagtail.wagtailsites',
+    'wagtail.wagtailusers',
+    'wagtail.wagtailsnippets',
+    'wagtail.wagtaildocs',
+    'wagtail.wagtailimages',
+    'wagtail.wagtailsearch',
+    'wagtail.wagtailadmin',
+    'wagtail.wagtailcore',
+
+    'modelcluster',
+    'taggit',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -213,7 +232,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details',
     'account.pipeline.save_facebook_details'
-)
+    )
 
 
 SOCIAL_AUTH_ENABLED_BACKENDS = ('facebook')
@@ -221,3 +240,4 @@ SOCIAL_AUTH_USER_MODEL = 'account.User'
 SOCIAL_AUTH_DEFAULT_USERNAME = "new_social_auth_user"
 
 
+WAGTAIL_SITE_NAME = "Greg Azevedo's Site"
