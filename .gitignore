@@ -1,7 +1,6 @@
 static/
 *_flymake*
 *.\#*
-webpack-stats.json
 
 
 # Byte-compiled / optimized / DLL files
