@@ -1,7 +1,8 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
-Lightmatter Base Install
+gregazevedo
 {% endblock title %}
 
 
@@ -11,5 +12,63 @@ Lightmatter Base Install
 <p>
 Ya...I'm workin on it. Check out the first blog post <a href="{% url 'blog' %}">here</a>
 </p>
+
+    <div class="container">
+        <div>
+            <a href="http://www.gregazevedo.com/facebook">
+                <img class="box" alt="image" src="{% static 'img/facebook.png' %}" />
+            </a>
+        </div>
+        <div>
+            <a href="http://www.gregazevedo.com/flickr">
+                <img alt="image" src="{% static 'img/flickr.png' %}" />
+            </a>
+        </div>
+        <div>
+            <a href="http://www.gregazevedo.com/foursquare">
+                <img alt="image" src="{% static 'img/foursquare.png' %}" />
+            </a>
+        </div>
+        <div>
+            <a href="http://www.gregazevedo.com/github">
+                <img alt="image" src="{% static 'img/github.png' %}" />
+            </a>
+        </div>
+        <div>
+            <a href="http://www.gregazevedo.com/google">
+                <img alt="image" src="{% static 'img/google+.png' %}" />
+            </a>
+        </div>
+        <div>
+            <a href="http://www.gregazevedo.com/instagram">
+                <img alt="image" src="{% static 'img/instagram.png' %}" />
+            </a>
+        </div>
+        <div>
+            <a href="http://www.gregazevedo.com/linkedin">
+                <img alt="image" src="{% static 'img/linkedin.png' %}" />
+            </a>
+        </div>
+        <div>
+            <a href="http://www.gregazevedo.com/stack">
+                <img alt="image" src="{% static 'img/stackoverflow.png' %}" />
+            </a>
+        </div>
+                <div>
+            <a href="http://www.gregazevedo.com/tumblr">
+                <img alt="image" src="{% static 'img/tumblr.png' %}" />
+            </a>
+        </div>
+        <div>
+            <a href="http://www.gregazevedo.com/twitter">
+                <img alt="image" src="{% static 'img/twitter.png' %}" />
+            </a>
+        </div>
+        <div>
+            <a href="http://www.gregazevedo.com/youtube">
+                <img alt="image" src="{% static 'img/youtube.png' %}" />
+            </a>
+        </div>
+    </div>
 {% endblock content %}
 

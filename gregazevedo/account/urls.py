@@ -10,5 +10,3 @@ urlpatterns.extend([
         name='register'),
     url(r'', include(auth_urls)),
 ])
-
-

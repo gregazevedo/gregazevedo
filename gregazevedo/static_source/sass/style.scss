@@ -6,10 +6,7 @@
 @import "header";
 @import "footer";
 @import "blog";
-
-/* comment to turn off grid */
-$visual-grid: true;
-
+@import "index";
 
 body {
   color: black;

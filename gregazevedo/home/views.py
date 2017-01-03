@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import StripeTokenForm, ChargeForm, UserForm
 from django.views.generic.edit import FormView
+from django.views.generic.base import TemplateView
 
 
 class ExampleFormView(FormView):
@@ -21,3 +22,7 @@ class ExampleFormView(FormView):
 def error(request):
     """Generate an exception. Useful for e.g. configuing Sentry"""
     raise Exception
+
+
+class AboutView(TemplateView):
+    template_name = 'about.html'
