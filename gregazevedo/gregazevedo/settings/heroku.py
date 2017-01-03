@@ -46,14 +46,6 @@ AWS_QUERYSTRING_AUTH = False
 # put the cloudfront distro here
 # AWS_S3_CUSTOM_DOMAIN = 'foo.cloudfront.net'
 
-
-EMAIL_BACKEND = 'sgbackend.SendGridBackend'
-SENDGRID_USER = env('SENDGRID_USERNAME')
-SENDGRID_PASSWORD = env('SENDGRID_PASSWORD')
-
-STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY', default='')
-STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY', default='')
-
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID', default='')
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY', default='')
 AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME', default='')
