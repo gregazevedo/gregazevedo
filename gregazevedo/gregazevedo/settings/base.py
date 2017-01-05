@@ -103,6 +103,7 @@ INSTALLED_APPS = (
     'gregazevedo.home',
     'gregazevedo.account',
     'gregazevedo.util',
+    'gregazevedo.blog',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
