@@ -9,7 +9,7 @@
 	{% for post in page.get_children %}
 		{% if post.live %}
 	        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-	        <h3>{{post.date|date:"M d, Y"}}</h3>
+	        <h3>{{post.specific.date|date:"M d, Y"}}</h3>
 	        {{ post.specific.intro }}
 	    {% endif %}
 	{% endfor %}
