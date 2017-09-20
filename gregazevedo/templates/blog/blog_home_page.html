@@ -6,7 +6,7 @@
 
 {% block content %}
     {{ page.body|richtext }}
-	{% for post in page.get_children %}
+	{% for post in articles %}
 		{% if post.live %}
 	        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
 	        <h3>{{post.specific.date|date:"M d, Y"}}</h3>

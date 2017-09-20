@@ -19,6 +19,12 @@ class BlogHomePage(Page):
         PageChooserPanel('related_page', 'blog.BlogArticlePage'),
     ]
 
+    def get_context(self, request):
+        context = super(BlogHomePage, self).get_context(request)
+        pages = self.get_children().specific().live()
+        context['articles'] = pages.order_by('-blogarticlepage__date')
+        return context
+
 
 class BlogArticlePage(Page):
     body = RichTextField()
